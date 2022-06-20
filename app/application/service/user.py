@@ -8,6 +8,9 @@ class UserService:
 
     def create_user(self, user_name: str):
         _user = User(name=user_name)
+
+        if self.repository.find_one(model=_user):
+            raise ValueError("유저가 이미 존재합니다. ")
         user = self.repository.create(_user)
 
         return user
