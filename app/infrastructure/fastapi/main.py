@@ -16,6 +16,7 @@ def create_app():
     return app
 
 def init_db():
+    db.init(database="database.db")
     db.connect()
     UserModel.create_table()
 
