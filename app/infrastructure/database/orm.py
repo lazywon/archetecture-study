@@ -13,4 +13,4 @@ class UserModel(BaseModel):
     name = CharField(unique=True)
 
     class Meta:
-        table_name="users"
+        table_name = "users"
